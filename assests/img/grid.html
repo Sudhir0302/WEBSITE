@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .red{
+            background-color: red;
+            /* grid-column: 4/4; */
+        }
+        .purple{
+            background-color: purple;
+            /* grid-column: 1/4; */
+        }
+        .orange{
+            background-color: orange;
+            /* grid-column: 4/3; */
+        }
+        @media only screen {
+            
+        }
+        .container{
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 300px 300px 300px;
+            grid-template-rows: 300px 300px 300px;
+        }
+        @keyframes myanim{
+            0%{
+                transform: translateX(-100%);
+                rotate:90deg;
+                scale:0%
+            }
+            50%{
+                transform: translateX(0%);
+                rotate:180deg;
+                scale:50%;
+            }
+            100%{
+                transform:translateX(100%);
+                rotate: 360deg;
+                scale:100%;
+            }
+        }
+
+        .red{
+            animation: 1s myanim ease-in;
+        }
+        .purple{
+            animation: 2s myanim ease-in;
+        }
+        .orange{
+            animation: 1s myanim ease-in;
+        }
+        .font{
+            animation: 1s myanim ease-in;
+        }
+        .red:hover{
+            background-color: aqua;
+            transition: 0.6s background-color ease-in;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box red"></div>
+        <div class="box purple"></div>
+        <div class="box orange"></div>
+        <!-- <div class="font">
+        <h1 style="font-size: 40px;">❤️</h1></div> -->
+    </div>
+</body>
+</html>
