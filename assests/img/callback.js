@@ -19,4 +19,37 @@ async function APIDATA() {
     const map1=mockdata.map((data)=>{console.log(data)})
     console.log(map1);
 }
-APIDATA()
+// APIDATA()
+
+function Pro(){
+    return new Promise((resolve,reject) => {
+        const x=true;
+        setTimeout(()=>{
+            if(x){
+                resolve("Success")
+            }
+            else{
+                reject("error")
+            }
+        },3000)
+    })
+}
+
+// async function datax() {
+//     try{
+//         const response=await Pro()
+//         console.log(response)
+//     }catch(e){
+//         console.log(e);
+//     }
+// }
+// datax()
+//instead of using the above method we can use .then method
+
+Pro()
+  .then(r => {
+    console.log(r+" hello"); // Will log "Success" after 3 seconds
+  })
+  .catch(error => {
+    console.log(error); // Will log "error" if `x` was `false`
+  });
